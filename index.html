@@ -19,7 +19,7 @@
         <span id="timer" class="bg-zinc-950 text-amber-400 font-mono px-2 py-0.5 rounded ml-1">01:59:59</span>
     </header>
 
-    <!-- Seção Inicial (Apenas o Vídeo visível) -->
+    <!-- Seção Inicial (Vídeo + Transparência de Engenharia) -->
     <main class="max-w-4xl mx-auto px-4 pt-10 pb-14 text-center">
         <div class="inline-flex items-center gap-2 bg-zinc-900 border border-amber-500/30 text-amber-400 text-xs font-semibold px-3.5 py-1 rounded-full uppercase tracking-wider mb-5">
             <span>De Pequeno Comerciante para Pequeno Comerciante</span>
@@ -29,20 +29,28 @@
             O Sistema de PDV Mais Completo que Você Já Viu + <span class="text-emerald-400">Seu Próprio Site no Ar</span>
         </h1>
 
-        <p class="text-zinc-400 text-base sm:text-lg max-w-2xl mx-auto mb-8">
+        <p class="text-zinc-400 text-base sm:text-lg max-w-2xl mx-auto mb-6">
             Assista ao vídeo até o final para conhecer todos os módulos por dentro e liberar a proposta única de Black Friday Antecipada.
         </p>
+
+        <!-- Bloco de Transparência e Autoridade Técnica sobre o Vídeo -->
+        <div class="max-w-2xl mx-auto bg-zinc-900/90 border border-zinc-800 rounded-2xl p-4 mb-6 text-left flex items-start gap-3.5 shadow-lg">
+            <span class="text-2xl mt-0.5">💻</span>
+            <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+                <strong class="text-amber-400">Nota do Criador:</strong> Perceba que neste vídeo não sou eu de verdade falando com você — <strong>eu mesmo escrevi o código e desenvolvi essa inteligência artificial</strong> para fazer esta apresentação, sem precisar pagar por softwares caros. Não está com perfeição cinematográfica, mas mostra na prática o nível de programação que aplico no sistema que vai rodar no seu negócio.
+            </p>
+        </div>
 
         <!-- Player de Vídeo Direto da Pasta img/ -->
         <div class="relative bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl mb-6">
             <video id="meuVideo" class="w-full max-h-[540px] bg-black" controls playsinline preload="metadata">
-                <source src="img/apresentacao.mp4" type="video/mp4">
+                <source src="img/apresentacao_1080p_30fps.mp4" type="video/mp4">
                 Seu navegador não suporta a reprodução de vídeo.
             </video>
         </div>
 
         <div id="aviso-bloqueio" class="text-sm text-amber-400 font-medium animate-pulse">
-            🔒 Assista até o final do vídeo para liberar o link de demonstração e os valores promocionais...
+            🔒 Assista até o final do vídeo para liberar o link de demonstração, as telas reais e os valores promocionais...
         </div>
     </main>
 
@@ -70,25 +78,238 @@
             </div>
         </section>
 
-        <!-- Vitrine dos Módulos (Imagens dentro da pasta img/) -->
-        <section class="max-w-6xl mx-auto px-4 py-12 border-t border-zinc-900">
-            <div class="text-center max-w-2xl mx-auto mb-12">
-                <h2 class="text-3xl font-extrabold mb-3">Conheça o Sistema Por Dentro</h2>
+        <!-- Carrossel Interativo das Telas Reais do Sistema -->
+        <section class="max-w-5xl mx-auto px-4 py-12 border-t border-zinc-900">
+            <div class="text-center max-w-2xl mx-auto mb-8">
+                <h2 class="text-3xl font-extrabold mb-3">Conheça Cada Tela do Sistema Por Dentro</h2>
                 <p class="text-zinc-400 text-sm sm:text-base">
-                    Desenvolvido no campo de batalha para eliminar gargalos, sem depender de sistemas engessados.
+                    Navegue pelas capturas reais do sistema em operação — desenvolvido no campo de batalha para eliminar gargalos.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5">
-                    <span class="text-xs font-bold text-amber-400 uppercase">01 • Frente de Caixa</span>
-                    <h3 class="text-lg font-bold mt-1 mb-2">PDV Ágil e Busca Rápida</h3>
-                    <p class="text-zinc-400 text-xs mb-4">Lançamento instantâneo, item genérico na hora e fechamento de caixa blindado.</p>
-                    <img src="img/04-caixa-pdv.jpg" alt="PDV Caixa" class="rounded-lg border border-zinc-800 w-full h-44 object-cover object-top">
+            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-4 sm:p-6 shadow-2xl">
+                <!-- Imagem Principal do Carrossel -->
+                <div class="relative bg-zinc-950 rounded-2xl overflow-hidden border border-zinc-800 flex items-center justify-center">
+                    <img id="carousel-img" src="img/03-admin-dashboard.jpg" alt="Tela do Sistema" class="w-full max-h-[480px] object-contain transition-opacity duration-300">
+                    
+                    <!-- Botão Anterior -->
+                    <button onclick="mudarSlide(-1)" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/75 hover:bg-emerald-500 hover:text-zinc-950 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg transition shadow-lg">
+                        ❮
+                    </button>
+                    <!-- Botão Próximo -->
+                    <button onclick="mudarSlide(1)" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/75 hover:bg-emerald-500 hover:text-zinc-950 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold text-lg transition shadow-lg">
+                        ❯
+                    </button>
                 </div>
 
-                <div class="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5">
-                    <span class="text-xs font-bold text-amber-400 uppercase">02 • Atendimento Móvel</span>
-                    <h3 class="text-lg font-bold mt-1 mb-2">App do Garçom + Senhas</h3>
-                    <p class="text-zinc-400 text-xs mb-4">Lançamento direto pelo celular com alerta vibratório e sonoro quando o prato fica pronto.</p>
-                    <img src="img/08-garcao
+                <!-- Legenda Dinâmica da Tela -->
+                <div class="mt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2 px-2">
+                    <div>
+                        <span id="carousel-tag" class="text-xs font-bold text-amber-400 uppercase tracking-wider">Módulo 01</span>
+                        <h3 id="carousel-title" class="text-lg sm:text-xl font-bold text-white">Central Administrativa + PDV</h3>
+                        <p id="carousel-desc" class="text-xs sm:text-sm text-zinc-400">Visão geral com operação rápida de caixa, delivery, senhas, fiado e cardápio.</p>
+                    </div>
+                    <span id="carousel-counter" class="text-xs font-mono bg-zinc-800 text-zinc-300 px-3 py-1 rounded-full self-start sm:self-center">
+                        1 / 12
+                    </span>
+                </div>
+
+                <!-- Miniaturas Clicáveis -->
+                <div id="carousel-thumbs" class="mt-5 flex gap-2.5 overflow-x-auto pb-2"></div>
+            </div>
+        </section>
+
+        <!-- Tabela Comparativa de 3 Planos (Todos levam ao seu WhatsApp) -->
+        <section class="max-w-6xl mx-auto px-4 py-16 border-t border-zinc-900">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl sm:text-4xl font-extrabold mb-3">Compare os Planos e Fale Direto Comigo</h2>
+                <p class="text-zinc-400 text-sm sm:text-base">
+                    O valor formado pelo mercado de desenvolvedores para esta estrutura completa é de <strong>R$ 13.500,00</strong>. Como conheço a realidade do pequeno comerciante, liberei <strong>50% de desconto à vista</strong> na Black Friday Antecipada.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+
+                <!-- Plano 1 -->
+                <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-zinc-200">Plano Start (Núcleo)</h3>
+                        <p class="text-xs text-zinc-500 mt-1 mb-6">Licença básica de operação local</p>
+                        <div class="text-3xl font-extrabold text-white mb-6">R$ 3.900,00</div>
+                        <ul class="space-y-3 text-sm text-zinc-300 mb-8">
+                            <li>✅ Frente de Caixa (PDV) e Cardápio</li>
+                            <li>✅ Controle de Abertura/Fechamento</li>
+                            <li>✅ Backup e Cadastro da Empresa</li>
+                            <li class="text-zinc-600">❌ Cozinha KDS, Garçom e Painel TV</li>
+                            <li class="text-zinc-600">❌ Delivery, Robô WhatsApp e Fiado</li>
+                            <li class="text-zinc-600">❌ Site Personalizado Exclusivo</li>
+                            <li class="text-zinc-600">❌ Desconto de 50% Black Friday</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/5584991290653?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20do%20sistema%20PDV%20e%20tenho%20interesse%20no%20Plano%20Start%20(R%24%203.900)." target="_blank" class="block text-center w-full py-3 rounded-xl border border-zinc-700 hover:bg-zinc-800 text-sm font-semibold transition">
+                        Contratar Plano Start via WhatsApp
+                    </a>
+                </div>
+
+                <!-- Plano 2 -->
+                <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold text-zinc-200">Plano Operação Salão</h3>
+                        <p class="text-xs text-zinc-500 mt-1 mb-6">Para atendimento de mesas e cozinha</p>
+                        <div class="text-3xl font-extrabold text-white mb-6">R$ 7.800,00</div>
+                        <ul class="space-y-3 text-sm text-zinc-300 mb-8">
+                            <li>✅ Tudo do Plano Start</li>
+                            <li>✅ App do Garçom + Cozinha KDS</li>
+                            <li>✅ Painel TV com Chamada de Senhas</li>
+                            <li>✅ Relatórios Gerenciais</li>
+                            <li class="text-zinc-600">❌ Delivery, Cardápio Online e Robô WhatsApp</li>
+                            <li class="text-zinc-600">❌ Site Personalizado Exclusivo</li>
+                            <li class="text-zinc-600">❌ Desconto de 50% Black Friday</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/5584991290653?text=Ol%C3%A1!%20Vi%20a%20p%C3%A1gina%20do%20sistema%20PDV%20e%20tenho%20interesse%20no%20Plano%20Opera%C3%A7%C3%A3o%20Sal%C3%A3o%20(R%24%207.800)." target="_blank" class="block text-center w-full py-3 rounded-xl border border-zinc-700 hover:bg-zinc-800 text-sm font-semibold transition">
+                        Contratar Plano Salão via WhatsApp
+                    </a>
+                </div>
+
+                <!-- Plano 3: Oferta Principal -->
+                <div class="bg-zinc-900 border-2 border-emerald-500 rounded-2xl p-8 relative flex flex-col justify-between shadow-2xl shadow-emerald-500/15">
+                    <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-emerald-500 text-zinc-950 text-xs font-extrabold px-4 py-1 rounded-full uppercase whitespace-nowrap">
+                        50% OFF • Black Friday Antecipada
+                    </span>
+
+                    <div>
+                        <h3 class="text-2xl font-extrabold text-white">Ecossistema Completo + Site</h3>
+                        <p class="text-xs text-emerald-400 font-semibold mt-1 mb-5">Todos os 17 Módulos + Site Exclusivo no Ar</p>
+
+                        <div class="bg-zinc-950 border border-zinc-800 rounded-xl p-4 mb-6">
+                            <span class="text-xs text-zinc-400 block">Preço de mercado (Desenvolvimento):</span>
+                            <span class="text-base text-red-400 line-through font-bold">De R$ 13.500,00</span>
+                            <div class="text-3xl font-extrabold text-white mt-1">
+                                R$ 6.750,00 <span class="text-xs font-normal text-emerald-400">à vista (50% OFF)</span>
+                            </div>
+                            <div class="text-sm text-zinc-300 mt-1">
+                                ou parcelado em até <strong>36x de R$ 200,00</strong>
+                            </div>
+                        </div>
+
+                        <ul class="space-y-2.5 text-sm text-zinc-200 mb-8">
+                            <li>✅ <strong>Todos os Módulos Liberados</strong> (Caixa, Cozinha, Garçom, TV, Delivery, Fiado, Relatórios, IA e App)</li>
+                            <li>✅ <strong>Site Personalizado Exclusivo</strong> criado por mim para o seu negócio</li>
+                            <li>✅ <strong>O Site e o Sistema são SEUS</strong> (Nunca sai do ar)</li>
+                            <li>✅ <strong>Personalização e Treinamento</strong> incluídos</li>
+                            <li>✅ <strong>Fale Direto com o CEO Criador</strong> no WhatsApp</li>
+                            <li>✅ <strong>Garantia Total de 7 Dias</strong> (Devolução de 100%)</li>
+                        </ul>
+                    </div>
+
+                    <a href="https://wa.me/5584991290653?text=Ol%C3%A1!%20Assisti%20ao%20v%C3%ADdeo%20at%C3%A9%20o%20final%20e%20quero%20garantir%20a%20oferta%20de%2050%25%20OFF%20da%20Black%20Friday%20Antecipada%20(Ecossistema%20Completo%20%2B%20Site%20Personalizado)!" target="_blank" class="block text-center w-full py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-extrabold text-base transition shadow-lg">
+                        GARANTIR DESCONTO COM O CEO
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Rodapé -->
+        <footer class="max-w-4xl mx-auto px-4 py-12 text-center border-t border-zinc-900">
+            <div class="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 mb-6">
+                <h4 class="text-lg font-bold text-white mb-2">🛡️ Garantia Incondicional de 7 Dias</h4>
+                <p class="text-sm text-zinc-400">
+                    Teste toda a estrutura no seu comércio por 7 dias. Se achar que não é para você, basta me chamar no WhatsApp que devolvo 100% do seu dinheiro.
+                </p>
+            </div>
+            <p class="text-xs text-zinc-500">Atendimento direto com o criador do sistema • Suporte humanizado via WhatsApp</p>
+        </footer>
+
+    </div>
+
+    <script>
+        // 1. CONTROLE DO VÍDEO E LIBERAÇÃO FALTANDO 3 SEGUNDOS
+        const video = document.getElementById('meuVideo');
+        const areaOferta = document.getElementById('area-oferta');
+        const avisoBloqueio = document.getElementById('aviso-bloqueio');
+        let jaLiberou = false;
+
+        function liberarPagina() {
+            if (jaLiberou) return;
+            jaLiberou = true;
+            areaOferta.classList.remove('bloqueado');
+            areaOferta.classList.add('liberado');
+            if (avisoBloqueio) {
+                avisoBloqueio.textContent = "✅ Oferta liberada! Role a página para baixo.";
+                avisoBloqueio.classList.remove('animate-pulse', 'text-amber-400');
+                avisoBloqueio.classList.add('text-emerald-400');
+            }
+        }
+
+        video.addEventListener('timeupdate', () => {
+            if (video.duration && (video.duration - video.currentTime) <= 3) {
+                liberarPagina();
+            }
+        });
+        video.addEventListener('ended', liberarPagina);
+
+        // 2. CARROSSEL DAS TELAS REAIS DO SISTEMA
+        const slides = [
+            { src: "img/03-admin-dashboard.jpg", tag: "Central ADM + PDV", title: "Operação Rápida e Controle Total", desc: "Abertura de caixa, status da cozinha em tempo real e acesso rápido a todas as funções." },
+            { src: "img/04-caixa-pdv.jpg", tag: "Frente de Caixa", title: "Busca Instantânea e Item Genérico", desc: "Encontre qualquer produto sem navegar por categorias ou crie itens avulsos na hora." },
+            { src: "img/07-fazer-pedido-caixa.jpg", tag: "PDV Ágil", title: "Lançamento Rápido no Balcão", desc: "Botões grandes e diretos para agilizar o atendimento nos horários de pico." },
+            { src: "img/08-garcao-visao-geral.jpg", tag: "Módulo Garçom", title: "Emissão de Senhas e Alertas no Celular", desc: "Quando a cozinha marca o pedido como pronto, o celular do garçom vibra e emite alerta sonoro." },
+            { src: "img/09-garcao-delivery-e-senha.jpg", tag: "Delivery & Senhas", title: "Gestão de Entregas e Pagamentos", desc: "Controle pedidos de delivery em aberto, endereço, status de pagamento e comandas." },
+            { src: "img/10-garcao-lancar-pedido.jpg", tag: "Atendimento Móvel", title: "Lançamento Direto da Mesa", desc: "Escolha modalidade (Local/Viagem), filtre categorias ou busque pratos direto pelo celular." },
+            { src: "img/11-cozinha-kds.jpg", tag: "Cozinha Inteligente (KDS)", title: "Cronômetro de Preparo em Tempo Real", desc: "Visualização por tamanho de card ou lista com botão de conclusão imediata." },
+            { src: "img/12-painel-tvs.jpg", tag: "Painel de TV", title: "Chamada de Senhas + Playlist na Tela", desc: "Exibe as últimas senhas chamadas no salão enquanto roda vídeos ou músicas do ambiente." },
+            { src: "img/13-fiado.jpg", tag: "Controle de Fiado", title: "Contas em Aberto e Recebimentos", desc: "Pesquise por cliente, comanda ou período e dê baixa em múltiplas contas com um clique." },
+            { src: "img/14-relatorios.jpg", tag: "Relatórios Gerenciais", title: "Faturamento, Entradas e Ticket Médio", desc: "Acompanhe o saldo do período, sangrias e exporte backups completos." },
+            { src: "img/15-impressao.jpg", tag: "Comprovantes & QR Code", title: "Senhas, QR Code da Conta e Comanda Parcial", desc: "Gere cupons curtos com QR Code de pagamento ou envie por PDF/imagem." },
+            { src: "img/16-configuracoes.jpg", tag: "Personalização Flexível", title: "Ligue ou Desligue Módulos na Hora", desc: "Adapte o sistema ao seu estabelecimento ativando apenas o que você usa." }
+        ];
+
+        let slideAtual = 0;
+        const imgEl = document.getElementById('carousel-img');
+        const tagEl = document.getElementById('carousel-tag');
+        const titleEl = document.getElementById('carousel-title');
+        const descEl = document.getElementById('carousel-desc');
+        const counterEl = document.getElementById('carousel-counter');
+        const thumbsContainer = document.getElementById('carousel-thumbs');
+
+        function renderThumbs() {
+            thumbsContainer.innerHTML = slides.map((s, idx) => `
+                <button onclick="irParaSlide(${idx})" class="flex-shrink-0 rounded-lg overflow-hidden border-2 transition ${idx === slideAtual ? 'border-emerald-500 scale-105' : 'border-zinc-800 opacity-60 hover:opacity-100'}">
+                    <img src="${s.src}" alt="${s.title}" class="w-16 h-12 object-cover object-top">
+                </button>
+            `).join('');
+        }
+
+        function irParaSlide(index) {
+            slideAtual = (index + slides.length) % slides.length;
+            const s = slides[slideAtual];
+            imgEl.src = s.src;
+            tagEl.textContent = s.tag;
+            titleEl.textContent = s.title;
+            descEl.textContent = s.desc;
+            counterEl.textContent = `${slideAtual + 1} / ${slides.length}`;
+            renderThumbs();
+        }
+
+        function mudarSlide(direcao) {
+            irParaSlide(slideAtual + direcao);
+        }
+
+        renderThumbs();
+
+        // 3. CRONÔMETRO REGRESSIVO
+        let segundos = 2 * 60 * 60;
+        const timerEl = document.getElementById('timer');
+        setInterval(() => {
+            if (segundos <= 0) return;
+            segundos--;
+            const h = String(Math.floor(segundos / 3600)).padStart(2, '0');
+            const m = String(Math.floor((segundos % 3600) / 60)).padStart(2, '0');
+            const s = String(segundos % 60).padStart(2, '0');
+            timerEl.textContent = `${h}:${m}:${s}`;
+        }, 1000);
+    </script>
+</body>
+</html>
