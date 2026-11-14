@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Friday Antecipada | Sistema PDV Completo + Site Exclusivo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #09090b; color: #f4f4f5; font-family: system-ui, -apple-system, sans-serif; }
+        .bloqueado { display: none; opacity: 0; transition: opacity 0.8s ease; }
+        .liberado { display: block; opacity: 1; }
+    </style>
+</head>
+<body class="antialiased selection:bg-emerald-500 selection:text-zinc-950">
+
+    <!-- Barra Superior de Urgência -->
+    <header class="bg-red-600 text-white py-2.5 px-4 text-center font-bold text-xs sm:text-sm sticky top-0 z-50 shadow-xl">
+        🔥 BLACK FRIDAY ANTECIPADA: Condição única de 50% OFF encerra em 
+        <span id="timer" class="bg-zinc-950 text-amber-400 font-mono px-2 py-0.5 rounded ml-1">01:59:59</span>
+    </header>
+
+    <!-- Seção Inicial (Apenas o Vídeo visível) -->
+    <main class="max-w-4xl mx-auto px-4 pt-10 pb-14 text-center">
+        <div class="inline-flex items-center gap-2 bg-zinc-900 border border-amber-500/30 text-amber-400 text-xs font-semibold px-3.5 py-1 rounded-full uppercase tracking-wider mb-5">
+            <span>De Pequeno Comerciante para Pequeno Comerciante</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-4">
+            O Sistema de PDV Mais Completo que Você Já Viu + <span class="text-emerald-400">Seu Próprio Site no Ar</span>
+        </h1>
+
+        <p class="text-zinc-400 text-base sm:text-lg max-w-2xl mx-auto mb-8">
+            Assista ao vídeo até o final para conhecer todos os módulos por dentro e liberar a proposta única de Black Friday Antecipada.
+        </p>
+
+        <!-- Player de Vídeo Direto da Pasta img/ -->
+        <div class="relative bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-800 shadow-2xl mb-6">
+            <video id="meuVideo" class="w-full max-h-[540px] bg-black" controls playsinline preload="metadata">
+                <source src="img/apresentacao.mp4" type="video/mp4">
+                Seu navegador não suporta a reprodução de vídeo.
+            </video>
+        </div>
+
+        <div id="aviso-bloqueio" class="text-sm text-amber-400 font-medium animate-pulse">
+            🔒 Assista até o final do vídeo para liberar o link de demonstração e os valores promocionais...
+        </div>
+    </main>
+
+    <!-- CONTEÚDO LIBERADO FALTANDO 3 SEGUNDOS PARA O FIM DO VÍDEO -->
+    <div id="area-oferta" class="bloqueado">
+
+        <!-- Botão Principal para o Site de Reservas -->
+        <section class="max-w-3xl mx-auto px-4 pb-16">
+            <div class="bg-gradient-to-b from-zinc-900 to-zinc-950 border-2 border-emerald-500/60 rounded-3xl p-8 text-center shadow-2xl shadow-emerald-500/10">
+                <span class="bg-emerald-500/10 text-emerald-400 text-xs font-bold px-3 py-1 rounded-full uppercase">Acesso Liberado</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold mt-3 mb-2">Veja na Prática o Padrão de Site que Eu Crio para Você</h2>
+                <p class="text-zinc-400 text-sm sm:text-base mb-6">
+                    Clique abaixo para testar ao vivo o sistema de reservas e presença digital integrado que acompanha o seu projeto:
+                </p>
+
+                <a href="https://engjmbrito-source.github.io/site_de_reservas/" target="_blank" class="inline-block w-full sm:w-auto bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-extrabold text-base sm:text-lg px-8 py-4 rounded-xl transition transform hover:scale-105 shadow-lg shadow-emerald-500/25">
+                    TESTAR SITE DE RESERVAS AO VIVO ➔
+                </a>
+
+                <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-zinc-300 border-t border-zinc-800 pt-5">
+                    <div>✅ <strong>O Site é Seu:</strong> Código e domínio sob seu controle</div>
+                    <div>⚡ <strong>Nunca Sai do Ar:</strong> Hospedagem de alta disponibilidade</div>
+                    <div>🛡️ <strong>7 Dias de Garantia:</strong> Devolução integral sem burocracia</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vitrine dos Módulos (Imagens dentro da pasta img/) -->
+        <section class="max-w-6xl mx-auto px-4 py-12 border-t border-zinc-900">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <h2 class="text-3xl font-extrabold mb-3">Conheça o Sistema Por Dentro</h2>
+                <p class="text-zinc-400 text-sm sm:text-base">
+                    Desenvolvido no campo de batalha para eliminar gargalos, sem depender de sistemas engessados.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5">
+                    <span class="text-xs font-bold text-amber-400 uppercase">01 • Frente de Caixa</span>
+                    <h3 class="text-lg font-bold mt-1 mb-2">PDV Ágil e Busca Rápida</h3>
+                    <p class="text-zinc-400 text-xs mb-4">Lançamento instantâneo, item genérico na hora e fechamento de caixa blindado.</p>
+                    <img src="img/04-caixa-pdv.jpg" alt="PDV Caixa" class="rounded-lg border border-zinc-800 w-full h-44 object-cover object-top">
+                </div>
+
+                <div class="bg-zinc-900/80 border border-zinc-800 rounded-2xl p-5">
+                    <span class="text-xs font-bold text-amber-400 uppercase">02 • Atendimento Móvel</span>
+                    <h3 class="text-lg font-bold mt-1 mb-2">App do Garçom + Senhas</h3>
+                    <p class="text-zinc-400 text-xs mb-4">Lançamento direto pelo celular com alerta vibratório e sonoro quando o prato fica pronto.</p>
+                    <img src="img/08-garcao
